@@ -14,7 +14,7 @@ For information about the installed K2 CLI execute `k2 about`
 
 ## Installing a K2 Application
 
-K2 application are installed from an instance of the K2 IDE service.
+K2 applications are installed from an instance of the K2 IDE service.
 
 The default K2 IDE service is expected to be at `http://localhost:8000`
 
@@ -72,3 +72,8 @@ The `k2_cli.ini` file provides values for the following configuration details
 | k2_ide_url            | http://localhost:8000 | The base URL of the source K2 IDE service |
 | install_dir           | ./apps                | The directory into which the downloaded application will be installed |
 
+### Logging Configuration
+
+The K2 CLI logger can be configured by editing the logging configuration file `logging.yaml`.
+
+The logging configuration file is a `YAML` or `JSON` formatted file containing logging configuration which is read and passed to the `logging.config.dictConfig(...)` method. Please see the [python logging documentation](https://docs.python.org/3/howto/logging-cookbook.html) for more details on the structure of the logging configuyration data. 
