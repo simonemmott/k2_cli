@@ -51,7 +51,7 @@ The K2 CLI searches for an instance of it's configuration files from the followi
 The table below lists in order the search path for K2 CLI configuration files
 
 | Search Order |
-----------------
+|--------------|
 | The directory in which the `k2` command is executed |
 | The locations identified by the environment variable `K2_SEARCH_PATH`. This environment variable is a list of `:` separated directories to search for configuration files |
 | The directory in which python executable is installed |
@@ -65,7 +65,7 @@ If the K2 CLI cannot find the configuration files then default configuration par
 The `k2_cli.ini` file provides values for the following configuration details
 
 | Key       | Default | Description |
--------------------------------------
+|-----------|---------|-------------|
 | [DEFAULT] |
 | logging_config        | logging.yaml          | The name of the logging configuration file |
 | logging_config_format | YAML                  | The format of the logging configuration file. valid values are `YAML` or `JSON` |
