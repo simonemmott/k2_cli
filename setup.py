@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
     name='k2_cli',
-    version='0.0.7',
+    version='0.1.0',
     author_email='simon.emmott@yahoo.co.uk',
     author='Simon Emmott',
     description='A command line interface for K2 application environments',
@@ -14,7 +14,8 @@ setup(
     long_description=read('README.md'),
     install_requires=[
         'Click',
-        'pyYaml'
+        'pyYaml',
+        'requests'
     ],
     entry_points='''
         [console_scripts]

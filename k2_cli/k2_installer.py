@@ -9,7 +9,10 @@ from urllib.parse import urlparse
 import argparse
 import json
 import logging
-from cli import K2CliError
+
+class K2InstallError(Exception):
+    pass
+
 
 logger = logging.getLogger('k2_cli')
 
@@ -42,7 +45,7 @@ def install(source, dest):
     if response.status_code != 200:
         resp = json.loads(response.text)
         logger.error(resp['trace'])
-        raise K2CliError(resp['error'])
+        raise K2InstallError(resp['error'])
     
     content_type = response.headers.get('content-type')
     if content_type == 'application/k2-directory':

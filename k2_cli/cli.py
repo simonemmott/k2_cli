@@ -1,10 +1,9 @@
 import click
 import os
 import logging
-import configuration
-import logger
-import k2_installer
-from tkinter.test.support import destroy_default_root
+from k2_cli import configuration
+from k2_cli import logger
+from k2_cli import k2_installer
         
 logger.setup_logging()
 
@@ -15,10 +14,7 @@ warning = logger.warning
 error = logger.error
 
 base_url = 'http://localhost:8000'
-install_dir = '.'
-
-class K2CliError(Exception):
-    pass
+install_dir = 'app'
 
 @click.group()
 def k2():

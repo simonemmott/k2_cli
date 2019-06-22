@@ -3,7 +3,7 @@ import yaml
 import json
 import logging
 import logging.config
-import configuration
+from k2_cli import configuration
 
 def setup_logging(path=None, default_level=logging.INFO, env_key='LOG_CFG'):
     config_path = None
