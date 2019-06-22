@@ -1,6 +1,7 @@
 import click
 import os
 import logging
+import k2_cli
 from k2_cli import configuration
 from k2_cli import logger
 from k2_cli import k2_installer
@@ -18,7 +19,25 @@ install_dir = 'app'
 
 @click.group()
 def k2():
+    '''
+    Command line interface for K2 application environments
+    '''
     pass
+
+@click.command()
+def about():
+    print('#######################################################')
+    print()
+    print(k2_cli.description)
+    print()
+    print('Version: {ver}'.format(ver=k2_cli.version))
+    print()
+    print('Author: {author}'.format(author=k2_cli.author))
+    print()
+    print('Email: {email}'.format(email=k2_cli.author_email))
+    print()
+    print('#######################################################')
+k2.add_command(about)
 
 @click.command()
 @click.option('--k2_ide_url', default=None, help='The base URL of the k2 IDE service')
