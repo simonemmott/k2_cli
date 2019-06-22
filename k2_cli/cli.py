@@ -7,7 +7,7 @@ def k2():
 @click.command()
 @click.argument('application')
 def install(application):
-    click.echo('Install {application}'.format(application=application))
+    click.echo('Install {application}!'.format(application=application))
     
 k2.add_command(install)
     
