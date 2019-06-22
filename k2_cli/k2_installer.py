@@ -11,19 +11,21 @@ import json
 import logging
 from cli import K2CliError
 
-LOG_LEVEL = logging.INFO
-
-logger = logging.getLogger('k2_installer')
-logger.setLevel(LOG_LEVEL)
-ch = logging.StreamHandler()
-ch.setLevel(LOG_LEVEL)
-fmt = logging.Formatter('%(levelname)s %(message)s')
-ch.setFormatter(fmt)
-logger.addHandler(ch)
+logger = logging.getLogger('k2_cli')
 
 scheme = ''
 netloc = ''
 path = ''
+
+def get_application(url):
+    response = requests.get(url)
+    if response.status_code != 200:
+        resp = json.loads(response.text)
+        logger.error(resp['trace'])
+        raise K2CliError(resp['error'])
+    else:
+        return json.loads(response.text)
+    
 
 def install(source, dest):
     global scheme
