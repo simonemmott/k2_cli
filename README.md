@@ -50,6 +50,8 @@ The K2 CLI searches for an instance of it's configuration files from the followi
 
 The table below lists in order the search path for K2 CLI configuration files
 
+| Search Order |
+----------------
 | The directory in which the `k2` command is executed |
 | The locations identified by the environment variable `K2_SEARCH_PATH`. This environment variable is a list of `:` separated directories to search for configuration files |
 | The directory in which python executable is installed |
