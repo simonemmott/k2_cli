@@ -1,8 +1,8 @@
 import click
 import os
 import logging
-import configuration
-import logger
+from k2_cli import configuration
+from k2_cli import logger
         
 logger.setup_logging()
 

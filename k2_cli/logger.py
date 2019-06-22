@@ -3,7 +3,7 @@ import yaml
 import json
 import logging
 import logging.config
-import configuration
+from k2_cli import configuration
 
 def setup_logging(path=None, default_level=logging.INFO, env_key='LOG_CFG'):
     config_path = None
@@ -15,6 +15,8 @@ def setup_logging(path=None, default_level=logging.INFO, env_key='LOG_CFG'):
         config_path = configuration.config.get('DEFAULT', 'logging_config')
     if not config_path:
         config_path = 'logging.yaml'
+        
+    config_path = configuration.find(config_path)
     
     config_format = configuration.config.get('DEFAULT', 'logging_config_format')
     if not config_format:
