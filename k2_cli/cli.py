@@ -15,7 +15,7 @@ warning = logger.warning
 error = logger.error
 
 base_url = 'http://localhost:8000'
-install_dir = 'app'
+install_dir = './app'
 
 @click.group()
 def k2():

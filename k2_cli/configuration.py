@@ -10,7 +10,7 @@ def _default_config(config):
         'logging_config_format': 'YAML',
     }
     
-def find(name, search=None):
+def find(name, search='K2_SEARCH_PATH'):
     if not name or name == '':
         raise ValueError('The name of the configuration file to be found must be supplied')
     if os.path.exists(name):
