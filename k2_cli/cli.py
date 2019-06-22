@@ -1,4 +1,18 @@
 import click
+import os
+import logging
+import configuration
+import logger
+        
+logger.setup_logging()
+
+logger = logging.getLogger('k2_cli')
+info = logger.info
+debug = logger.debug
+
+
+class K2CliError(Exception):
+    pass
 
 @click.group()
 def k2():
@@ -7,6 +21,7 @@ def k2():
 @click.command()
 @click.argument('application')
 def install(application):
+    info('Installing {application}'.format(application=application))
     click.echo('Install {application}!'.format(application=application))
     
 k2.add_command(install)
